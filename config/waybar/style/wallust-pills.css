@@ -1,0 +1,271 @@
+/* ---- Flat Pill Layout — colors auto-themed by wallust ---- */
+/* Structure is permanent. Colors come from wallust/colors-waybar.css  */
+
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 13px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Bar ──────────────────────────────────────────────────── */
+window#waybar {
+  background-color: @background;
+  color: @foreground;
+  transition: background-color 0.3s ease;
+}
+window#waybar.hidden { opacity: 0.2; }
+window#waybar.empty  { background-color: @background; }
+window#waybar.empty #window {
+  padding: 0; border: 0;
+  background-color: transparent;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────── */
+tooltip {
+  background: @color4;
+  border-radius: 12px;
+  border: 1px solid @color12;
+  color: @foreground;
+  padding: 6px 10px;
+}
+tooltip label { color: @color15; }
+
+/* ── All modules base ─────────────────────────────────────── */
+/*   color4 = mid-dark palette — always visibly different from  */
+/*   the bar background, even with monochromatic wallpapers.    */
+#backlight, #battery, #bluetooth, #clock, #cpu,
+#disk, #idle_inhibitor, #keyboard-state, #memory,
+#mode, #mpris, #network, #pulseaudio, #temperature,
+#tray, #window, #wireplumber, #workspaces,
+#custom-backlight, #custom-cycle_wall, #custom-hint,
+#custom-keyboard, #custom-light_dark, #custom-lock,
+#custom-menu, #custom-power, #custom-swaync,
+#custom-updater, #custom-weather {
+  color: @color15;
+  background-color: @color4;
+  border-radius: 14px;
+  padding: 4px 10px;
+  margin: 3px 2px;
+  transition: all 0.2s ease;
+}
+
+/* ── Workspaces ───────────────────────────────────────────── */
+#workspaces {
+  background-color: @color4;
+  border-radius: 20px;
+  padding: 2px 6px;
+  margin: 3px 4px;
+}
+
+#workspaces button {
+  all: unset;
+  color: @color7;
+  border-radius: 12px;
+  padding: 2px 8px;
+  margin: 1px 2px;
+  min-width: 18px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#workspaces button.active {
+  color: @background;
+  background-color: @color14;
+  border-radius: 12px;
+  padding: 2px 14px;
+}
+
+#workspaces button:hover {
+  color: @background;
+  background-color: @color13;
+  border-radius: 12px;
+}
+
+#workspaces button.urgent {
+  background-color: @color9;
+  color: @color15;
+}
+
+/* ── Clock ────────────────────────────────────────────────── */
+#clock {
+  color: @background;
+  background-color: @color14;
+  border-radius: 14px;
+  padding: 4px 14px;
+  font-weight: bold;
+}
+
+/* ── Menu button ──────────────────────────────────────────── */
+#custom-menu {
+  color: @background;
+  background-color: @color14;
+  border-radius: 14px;
+  padding: 4px 14px;
+  margin: 3px 4px;
+}
+#custom-menu:hover {
+  background-color: @color15;
+  color: @background;
+}
+
+/* ── Power button ─────────────────────────────────────────── */
+#custom-power {
+  color: @color14;
+  background-color: @color9;
+  border-radius: 14px;
+  padding: 4px 12px;
+  margin: 3px 4px;
+}
+#custom-power:hover {
+  color: @background;
+  background-color: @color13;
+}
+
+/* ── Window title ─────────────────────────────────────────── */
+#window {
+  color: @color15;
+  background-color: @color4;
+  border-radius: 14px;
+  padding: 4px 14px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* ── CPU ──────────────────────────────────────────────────── */
+#cpu {
+  color: @color14;
+  background-color: @color3;
+}
+#cpu:hover { background-color: @color4; }
+
+/* ── Memory ───────────────────────────────────────────────── */
+#memory {
+  color: @color13;
+  background-color: @color3;
+}
+
+/* ── Disk ─────────────────────────────────────────────────── */
+#disk {
+  color: @color15;
+  background-color: @color3;
+}
+
+/* ── Battery ──────────────────────────────────────────────── */
+#battery {
+  color: @color15;
+  background-color: @color4;
+}
+#battery.charging, #battery.plugged {
+  color: @color0;
+  background-color: @color10;
+}
+#battery.warning:not(.charging) {
+  color: @color0;
+  background-color: @color13;
+}
+#battery.critical:not(.charging) {
+  color: @color15;
+  background-color: @color5;
+  animation: blink 0.5s linear infinite alternate;
+}
+@keyframes blink {
+  to { color: @color7; }
+}
+
+/* ── Network ──────────────────────────────────────────────── */
+#network {
+  color: @color15;
+  background-color: @color3;
+}
+#network.disconnected {
+  color: @color15;
+  background-color: @color5;
+}
+
+/* ── Bluetooth ────────────────────────────────────────────── */
+#bluetooth {
+  color: @color15;
+  background-color: @color3;
+}
+#bluetooth.disconnected { color: @color6; }
+
+/* ── Audio ────────────────────────────────────────────────── */
+#pulseaudio, #wireplumber {
+  color: @color15;
+  background-color: @color3;
+}
+#pulseaudio.muted { color: @color6; }
+
+/* ── Idle inhibitor ───────────────────────────────────────── */
+#idle_inhibitor {
+  color: @color6;
+  background-color: @color4;
+}
+#idle_inhibitor.activated {
+  color: @color0;
+  background-color: @color12;
+}
+
+/* ── Temperature ──────────────────────────────────────────── */
+#temperature {
+  color: @color15;
+  background-color: @color3;
+}
+#temperature.critical {
+  color: @color15;
+  background-color: @color5;
+}
+
+/* ── Swaync / notifications ───────────────────────────────── */
+#custom-swaync {
+  color: @color15;
+  background-color: @color3;
+}
+
+/* ── Updater ──────────────────────────────────────────────── */
+#custom-updater {
+  color: @color15;
+  background-color: @color3;
+}
+
+/* ── Weather ──────────────────────────────────────────────── */
+#custom-weather {
+  color: @color15;
+  background-color: @color4;
+}
+
+/* ── Tray ─────────────────────────────────────────────────── */
+#tray {
+  background-color: @color4;
+  border-radius: 14px;
+  padding: 4px 8px;
+}
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @color5;
+}
+
+/* ── Backlight ────────────────────────────────────────────── */
+#backlight { color: @color15; }
+
+/* ── Sliders ──────────────────────────────────────────────── */
+#pulseaudio-slider slider, #backlight-slider slider {
+  min-width: 0; min-height: 0;
+  opacity: 0; background: none;
+  border: none; box-shadow: none;
+}
+#pulseaudio-slider trough, #backlight-slider trough {
+  min-width: 80px; min-height: 4px;
+  border-radius: 4px;
+  background-color: @color3;
+}
+#pulseaudio-slider highlight, #backlight-slider highlight {
+  min-height: 4px;
+  border-radius: 4px;
+  background-color: @color12;
+}

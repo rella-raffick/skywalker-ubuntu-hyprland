@@ -1,0 +1,21 @@
+-- wallust auto-generated — do not edit manually
+return {
+  bg  = "#0F1012",
+  fg  = "#D1ECF5",
+  c0  = "#37383A",
+  c1  = "#080C13",
+  c2  = "#080C13",
+  c3  = "#132361",
+  c4  = "#092E4E",
+  c5  = "#1A5372",
+  c6  = "#5C98AA",
+  c7  = "#B5DCE8",
+  c8  = "#7E9AA2",
+  c9  = "#0A1019",
+  c10 = "#0A1019",
+  c11 = "#1A2F82",
+  c12 = "#0C3E68",
+  c13 = "#226F98",
+  c14 = "#7BCAE2",
+  c15 = "#B5DCE8",
+}
