@@ -61,9 +61,14 @@ link "config/nvim/lua/colors/wallust-colors.lua"       "$HOME/.config/nvim/lua/c
 link "config/nvim/lua/plugins/colorscheme.lua"         "$HOME/.config/nvim/lua/plugins/colorscheme.lua"
 link "config/nvim/lua/plugins/lang.lua"                "$HOME/.config/nvim/lua/plugins/lang.lua"
 
-# ── Hyprland scripts ───────────────────────────────────────────────────
+# ── Hyprland scripts + lock ────────────────────────────────────────────
 link "config/hypr/scripts/WallustSwww.sh"              "$HOME/.config/hypr/scripts/WallustSwww.sh"
 link "config/hypr/UserScripts/WallpaperSelect.sh"      "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh"
+link "config/hypr/hyprlock.conf"                       "$HOME/.config/hypr/hyprlock.conf"
+
+# ── Wlogout ────────────────────────────────────────────────────────────
+link "config/wlogout/style.css"                        "$HOME/.config/wlogout/style.css"
+link "config/wlogout/layout"                           "$HOME/.config/wlogout/layout"
 
 # ── Cava ───────────────────────────────────────────────────────────────
 link "config/cava/config"                              "$HOME/.config/cava/config"
